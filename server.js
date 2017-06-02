@@ -12,8 +12,14 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/app'));
 
-app.get('*', function(req, res){
+app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/index.html'));
+});
+app.get('/faq', function(req, res){
+	res.sendFile(path.join(__dirname + '/app/views/faq.html'));
+});
+app.get('/strona', function(req, res){
+	res.sendFile(path.join(__dirname + '/app/views/strona.html'));
 });
 
 app.listen(8080);
