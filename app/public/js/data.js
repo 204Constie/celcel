@@ -5,172 +5,172 @@
     ns.data.pl = {
         commodityCodesByCategory: [
             {
-                categoryName: "Live animals",
-                categoryCode: "01",
-                items: [
+                text: "Żywe zwierzęta",
+                code: "01",
+                nodes: [
                     {
-                        name: "Lamb",
+                        text: "Owca",
                         code: "0101"
                     },
                     {
-                        name: "Sheep",
+                        text: "Jagnię",
                         code: "0102"
                     }
                 ]
             },
             {
-                categoryName: "Vegetables",
-                categoryCode: "02",
-                items: [
+                text: "Warzywa",
+                code: "02",
+                nodes: [
                     {
-                        name: "Potato",
+                        text: "Ziemniak",
                         code: "0201"
                     },
                     {
-                        name: "Carrot",
+                        text: "Marchew",
                         code: "0202",
                     },
                     {
-                        name: "Onion",
+                        text: "Cebula",
                         code: "0203"
                     }
                 ]
             },
             {
-                categoryName: "Vehicles",
-                categoryCode: "03",
-                items: [
+                text: "Pojazdy",
+                code: "03",
+                nodes: [
                     {
-                        name: "Car",
+                        text: "Samochód",
                         code: "0301"
                     },
                     {
-                        name: "Motor vehicle",
+                        text: "Motocykl",
                         code: "0302"
                     },
                     {
-                        name: "Tractor",
+                        text: "Traktor",
                         code: "0303"
                     }
                 ]
             },
             {
-                categoryName: "Mineral products",
-                categoryCode: "04",
-                items: [
+                text: "Minerały",
+                code: "04",
+                nodes: [
                     {
-                        name: "Plastic",
+                        text: "Plastik",
                         code: "0401"
                     },
                     {
-                        name: "Leather",
+                        text: "Skóra",
                         code: "0402"
                     },
                     {
-                        name: "Wood",
+                        text: "Drewno",
                         code: "0403"
                     },
                     {
-                        name: "Stone",
+                        text: "Kamień",
                         code: "0404"
                     }
                 ]
             }
         ],
         countries: [
-            { name: "Poland" },
-            { name: "Germany" },
-            { name: "United States" },
-            { name: "France" },
-            { name: "India" },
-            { name: "Argentina" },
-            { name: "Chile" }
+            { text: "Polska" },
+            { text: "Niemcy" },
+            { text: "Stany Zjednoczone" },
+            { text: "Francja" },
+            { text: "Indie" },
+            { text: "Argentyna" },
+            { text: "Chile" }
         ]
     };
 
     ns.data.eng = {
         commodityCodesByCategory: [
             {
-                categoryName: "Live animals",
-                categoryCode: "01",
-                items: [
+                text: "Live animals",
+                code: "01",
+                nodes: [
                     {
-                        name: "Lamb",
+                        text: "Lamb",
                         code: "0101"
                     },
                     {
-                        name: "Sheep",
+                        text: "Sheep",
                         code: "0102"
                     }
                 ]
             },
             {
-                categoryName: "Vegetables",
-                categoryCode: "02",
-                items: [
+                text: "Vegetables",
+                code: "02",
+                nodes: [
                     {
-                        name: "Potato",
+                        text: "Potato",
                         code: "0201"
                     },
                     {
-                        name: "Carrot",
+                        text: "Carrot",
                         code: "0202",
                     },
                     {
-                        name: "Onion",
+                        text: "Onion",
                         code: "0203"
                     }
                 ]
             },
             {
-                categoryName: "Vehicles",
-                categoryCode: "03",
-                items: [
+                text: "Vehicles",
+                code: "03",
+                nodes: [
                     {
-                        name: "Car",
+                        text: "Car",
                         code: "0301"
                     },
                     {
-                        name: "Motor vehicle",
+                        text: "Motor vehicle",
                         code: "0302"
                     },
                     {
-                        name: "Tractor",
+                        text: "Tractor",
                         code: "0303"
                     }
                 ]
             },
             {
-                categoryName: "Mineral products",
-                categoryCode: "04",
-                items: [
+                text: "Mineral products",
+                code: "04",
+                nodes: [
                     {
-                        name: "Plastic",
+                        text: "Plastic",
                         code: "0401"
                     },
                     {
-                        name: "Leather",
+                        text: "Leather",
                         code: "0402"
                     },
                     {
-                        name: "Wood",
+                        text: "Wood",
                         code: "0403"
                     },
                     {
-                        name: "Stone",
+                        text: "Stone",
                         code: "0404"
                     }
                 ]
             }
         ],
         countries: [
-            { name: "Poland" },
-            { name: "Germany" },
-            { name: "United States" },
-            { name: "France" },
-            { name: "India" },
-            { name: "Argentina" },
-            { name: "Chile" }
+            { text: "Poland" },
+            { text: "Germany" },
+            { text: "United States" },
+            { text: "France" },
+            { text: "India" },
+            { text: "Argentina" },
+            { text: "Chile" }
         ]
     }
 
