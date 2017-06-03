@@ -13,6 +13,16 @@ var setupCargoCodeModal = function() {
     // TODO: PUT NUMBER IN SELECTION
 };
 
+var setupDropdownsSelection = function() {
+    $(".dropdown-menu li a").click(function(){
+
+        $(".btn.currency:first-child").html($(this).text() + ' <span class="caret"></span>');
+        $(".btn.currency:first-child").val($(this).text());
+
+    });
+};
+
 $(document).ready(function() {
     setupCargoCodeModal();
+    setupDropdownsSelection();
 });
