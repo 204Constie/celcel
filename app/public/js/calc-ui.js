@@ -3,8 +3,6 @@
     window.CALC = window.CALC || {};
     window.CALC.language = "pl";
 
-
-
     var setupCargoCodeModal = function() {
         $('#modal-cargo-code').css('display', 'none');
         $('#lookup-cargo-code').on('click', function() {
@@ -17,11 +15,21 @@
     };
 
     var setupDropdownsSelection = function() {
-        $(".dropdown-menu li a").click(function(){
+        $(".dropdown-menu.units li a").click(function(event){
+            event.preventDefault();
+            $(".btn.unit:first-child").html($(this).text() + ' <span class="caret"></span>');
+            $(".btn.unit:first-child").val($(this).text());
 
-            $(".btn.currency:first-child").html($(this).text() + ' <span class="caret"></span>');
-            $(".btn.currency:first-child").val($(this).text());
+        });
+    };
 
+    var setupMeursingSelection = function() {
+        $('#modal-meursing').css('display', 'none');
+        $('#lookup-meursing').on('click', function() {
+            $('#modal-meursing').css('display', '');
+        });
+        $('#modal-meursing-close').on('click', function() {
+            $('#modal-meursing').css('display', 'none');
         });
     };
 
@@ -58,7 +66,7 @@
         setupCargoCodeModal();
         setupDropdownsSelection();
         populateCommodityCodesTree();
+        setupMeursingSelection();
     });
 
 })(window, document, $);
-
