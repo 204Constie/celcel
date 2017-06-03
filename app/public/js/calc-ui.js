@@ -22,7 +22,18 @@ var setupDropdownsSelection = function() {
     });
 };
 
+var setupMeursingSelection = function() {
+    $('#modal-meursing').css('display', 'none');
+    $('#lookup-meursing').on('click', function() {
+        $('#modal-meursing').css('display', '');
+    });
+    $('#modal-meursing-close').on('click', function() {
+        $('#modal-meursing').css('display', 'none');
+    });
+};
+
 $(document).ready(function() {
     setupCargoCodeModal();
     setupDropdownsSelection();
+    setupMeursingSelection();
 });
