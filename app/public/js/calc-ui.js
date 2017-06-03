@@ -95,12 +95,19 @@
 
     };
 
+    var setupDropdowns = function(){
+        $('#input-currency > ul > li > a').click(function(e){
+            $('#input-currency > button').text(this.innerHTML);
+        });
+    };
+
     $(document).ready(function() {
         setupCargoCodeModal();
         setupDropdownsSelection();
         populateCommodityCodesTree();
         setupMeursingSelection();
         setupAdditionalUnits();
+        setupDropdowns();
     });
 
 })(window, document, $);
