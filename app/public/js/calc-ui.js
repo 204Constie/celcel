@@ -15,6 +15,13 @@
     };
 
     var setupDropdownsSelection = function() {
+        $(".dropdown-menu.currency li a").click(function(event){
+            event.preventDefault();
+            $(".btn.currency:first-child").html($(this).text() + ' <span class="caret"></span>');
+            $(".btn.currency:first-child").val($(this).text());
+
+        });
+
         $(".dropdown-menu.units li a").click(function(event){
             event.preventDefault();
             $(".btn.unit:first-child").html($(this).text() + ' <span class="caret"></span>');
@@ -30,6 +37,32 @@
         });
         $('#modal-meursing-close').on('click', function() {
             $('#modal-meursing').css('display', 'none');
+        });
+    };
+
+
+
+    var setupAdditionalUnits = function() {
+        $('#add-unit').click(function(event) {
+            event.preventDefault();
+
+            var value = $('#unit-selection').val();
+            var unit = $('#unit-selection-button').text();
+
+            var element = '<tr>' +
+                '<td>' + value + '</td>' +
+                '<td>' + unit + '</td>' +
+                '<td><button class="btn btn-danger">Remove</button></td>' +
+                '</tr>';
+
+            var addedElement = $('#unit-selection-result-table > tbody').append(element).children().last();
+            $(addedElement).find("button").click(function(event) {
+                event.preventDefault();
+                console.log("Delete clicked!");
+                $(addedElement).remove();
+            });
+
+            console.log("Adding!");
         });
     };
 
@@ -67,6 +100,7 @@
         setupDropdownsSelection();
         populateCommodityCodesTree();
         setupMeursingSelection();
+        setupAdditionalUnits();
     });
 
 })(window, document, $);

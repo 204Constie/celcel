@@ -191,26 +191,71 @@
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <label for="unit-selection">Jednostka miary:</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="unit-selection">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">001 - stopień plato <span class="caret"></span></button>
-                                <ul class="dropdown-menu units">
-                                    <li><a href="#">001 - stopień plato</a></li>
-                                    <li><a href="#">MIL - tysiąc sztuk</a></li>
-                                    <!--<li role="separator" class="divider"></li>-->
-                                    <!--<li><a href="#">Separated link</a></li>-->
-                                </ul>
-                                <button type="button" class="btn btn-default">Dodaj</button>
+                        <label for="unit-selection">Jednostki miary:</label>
+                        <div>
+                            <div class="input-group">
+                                <input type="number" id="unit-selection" class="form-control">
+                                <div class="input-group-btn">
+                                    <button type="button" id="unit-selection-button" class="btn btn-default dropdown-toggle unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">001 - stopień plato <span class="caret"></span></button>
+                                    <ul class="dropdown-menu units">
+                                        <li><a href="#">001 - stopień plato</a></li>
+                                        <li><a href="#">MIL - tysiąc sztuk</a></li>
+                                        <!--<li role="separator" class="divider"></li>-->
+                                        <!--<li><a href="#">Separated link</a></li>-->
+                                    </ul>
+                                    <button type="button" class="btn btn-default" id="add-unit">Dodaj</button>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="panel panel-default table-result" id="unit-selection-result-div">
+                            <table class="table table-bordered" id="unit-selection-result-table">
+                                <thead>
+                                    <th>Wartość</th>
+                                    <th>Jednostka</th>
+                                    <th>Akcje</th>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
 
                 </div>
 
                 <div class="col-md-6">
-                    asd
+
+                    <div class="form-group">
+                        <label for="additional-code-selection">Kody dodatkowe:</label>
+                        <div>
+                            <div class="input-group">
+                                <input type="number" id="additional-code-selection" class="form-control">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default" id="btn-additional-code-selection">
+                                        <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="btn-additional-code-add">
+                                        Dodaj
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default table-result" id="additional-code-selection-result-div">
+                            <table class="table table-bordered" id="additional-code-selection-result-table">
+                                <thead>
+                                <th>Kod</th>
+                                <th>Akcje</th>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -223,9 +268,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../public/js/lodash.min.js"></script>
-<script src="../public/js/calc-ui.js"></script>
 <script src="../public/js/data.js"></script>
 <script src="../public/js/bootstrap-treeview.min.js"></script>
+<script src="../public/js/calc-ui.js"></script>
 
 </body>
 </html>

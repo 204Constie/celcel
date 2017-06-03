@@ -65,3 +65,9 @@ code {
 .modal-close {
     float: right;
 }
+
+.table-result {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
