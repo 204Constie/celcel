@@ -66,6 +66,24 @@
         });
     };
 
+    var setupAdditionalCodes = function() {
+        $('#btn-additional-code-add').click(function(event) {
+            event.preventDefault();
+
+            var value = $('#additional-code-selection').val();
+            var element = '<tr>' +
+                '<td>' + value + '</td>' +
+                '<td><button class="btn btn-danger">Remove</button></td>' +
+                '</tr>';
+
+            var addedElement = $('#additional-code-selection-result-table > tbody').append(element).children().last();
+            $(addedElement).find("button").click(function(event) {
+                event.preventDefault();
+                $(addedElement).remove();
+            });
+        })
+    };
+
     var buildCargoText = function(entry){
         entry.text = entry.code + " - " + entry.text;
         if(entry.nodes){
@@ -107,6 +125,7 @@
         populateCommodityCodesTree();
         setupMeursingSelection();
         setupAdditionalUnits();
+        setupAdditionalCodes();
         setupDropdowns();
     });
 
