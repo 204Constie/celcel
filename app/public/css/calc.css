@@ -38,3 +38,30 @@ code {
     font-size: 80%;
 }
 
+/*---*/
+/*CUSTOM CSS*/
+/*---*/
+
+.lookup {
+    cursor: pointer;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+
+.modal{
+    /*display: block !important;*/
+    display: block;
+}
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 250px;
+    overflow-y: auto;
+}
+.modal-title {
+    float: left;
+}
+.modal-close {
+    float: right;
+}
