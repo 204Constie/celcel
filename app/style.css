@@ -1,7 +1,42 @@
 ul {
   list-style: none;
+  padding-left: 0;
+}
+
+.bulletlist {
+  list-style-type: circle;
+  padding-left: 5%;
 }
 
 .jumbotron {
   margin-top: 80px;
+}
+
+.someaddress {
+  text-align: center;
+
+}
+
+.someaddress p {
+  font-size: 1.2em;
+}
+
+.spisitem:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.spisitem a {
+  color: inherit;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -65px;
+    visibility: hidden;
+}
+
+.spis {
+  padding: 2% 3%;
 }
