@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Kalkulator</title>
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -61,7 +65,7 @@
 
         <form>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
 
                     <div class="form-group">
                         <label for="input-type">Typ:</label>
@@ -122,7 +126,7 @@
                             <input type="number" class="form-control" id="input-value">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default dropdown-toggle currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AUD - dolar australijski <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu currency dropdown-menu-right">
                                     <li><a href="#">AUD - dolar australijski</a></li>
                                     <li><a href="#">BGN - lew (Bułgaria)</a></li>
                                     <li><a href="#">BRL - real (Brazylia)</a></li>
@@ -137,7 +141,7 @@
 
 
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
 
                     <div class="form-group">
                         <label for="input-mass-brutto">Masa brutto (kg):</label>
@@ -190,17 +194,39 @@
 
             </div> <!-- ROW -->
 
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="unit-selection">Jednostka miary:</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="unit-selection">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">001 - stopień plato <span class="caret"></span></button>
+                                <ul class="dropdown-menu units">
+                                    <li><a href="#">001 - stopień plato</a></li>
+                                    <li><a href="#">MIL - tysiąc sztuk</a></li>
+                                    <!--<li role="separator" class="divider"></li>-->
+                                    <!--<li><a href="#">Separated link</a></li>-->
+                                </ul>
+                                <button type="button" class="btn btn-default">Dodaj</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    asd
+                </div>
+
+            </div>
+
 
         </form>
 
     </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">Place sticky footer content here.</p>
-        </div>
-    </footer>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

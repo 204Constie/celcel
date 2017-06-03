@@ -14,10 +14,17 @@ var setupCargoCodeModal = function() {
 };
 
 var setupDropdownsSelection = function() {
-    $(".dropdown-menu li a").click(function(){
-
+    $(".dropdown-menu.currency li a").click(function(event){
+        event.preventDefault();
         $(".btn.currency:first-child").html($(this).text() + ' <span class="caret"></span>');
         $(".btn.currency:first-child").val($(this).text());
+
+    });
+
+    $(".dropdown-menu.units li a").click(function(event){
+        event.preventDefault();
+        $(".btn.unit:first-child").html($(this).text() + ' <span class="caret"></span>');
+        $(".btn.unit:first-child").val($(this).text());
 
     });
 };
