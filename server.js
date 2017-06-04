@@ -15,6 +15,9 @@ app.use(express.static(__dirname + '/app'));
 app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/index.html'));
 });
+app.get('/en', function(req, res){
+	res.sendFile(path.join(__dirname + '/app/index.en.html'));
+});
 app.get('/faq', function(req, res){
 	res.sendFile(path.join(__dirname + '/app/views/faq.html'));
 });
