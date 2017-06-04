@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kalkulator</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../public/css/calc.css"/>
+    <link rel="stylesheet" href="../public/css/bootstrap-treeview.min.css"/>
+
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TariffCalc</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="/calc">Kalkulator</a></li> -->
+                <li><a href="/calc?lang=en">Calculator</a></li>
+                <li><a href="/strona?lang=en">Help</a></li>
+                <!-- <li><a href="#contact">Kontakt</a></li> -->
+                <li><a href="/faq?lang=en">FAQ</a></li>
+                <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li class="dropdown-header">Nav header</li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li><a href="#">One more separated link</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/calc">PL</a></li>
+                <li class="active"><a href="/calc?lang=en">EN</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="container">
+    <div class="page-header">
+        <h1>Tariff calculator</h1>
+    </div>
+    <!--<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>-->
+    <!--<p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>-->
+
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group required">
+                    <label for="input-type">Type</label>
+                    <select class="form-control" id="input-type" required>
+                        <option value="import">Import</option>
+                        <option value="export">Export</option>
+                    </select>
+                </div>
+                <div class="form-group required">
+                    <label for="input-country">Country</label>
+                    <select class="form-control" id="input-country" required>
+                        <option value="en">England</option>
+                        <option value="pl">Poland</option>
+                    </select>
+                </div>
+
+                <div class="form-group required">
+                    <label for="cargo-code">Commodity code</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="cargo-code" required>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false" id="lookup-cargo-code">
+                                <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="modal-cargo-code">
+                    <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="modal-title">Commodity code selection</span>
+                                <span class="modal-close glyphicon glyphicon-remove lookup" aria-hidden="true" id="modal-cargo-code-close"></span>
+                            </div>
+                            <div class="modal-body">
+                                <div id="commodityCodesTree"></div>
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group required">
+                    <label for="input-value">Customs value</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="input-value" required>
+                        <div class="input-group-btn" id="input-currency">
+                            <button type="button" class="btn btn-default dropdown-toggle currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PLN - Polish zloty <span class="caret"></span></button>
+                            <ul class="dropdown-menu currency dropdown-menu-right">
+                                <li><a href="#">GBP - Britain pound </a></li>
+                                <li><a href="#">PLN - Polish zloty </a></li>
+                                <li><a href="#">USD - American dolar </a></li>
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="input-mass-brutto">Gross mass (kg)</label>
+                    <input class="form-control" type="number" id="input-mass-brutto" name="input-mass-brutto">
+                </div>
+                <div class="form-group required">
+                    <label for="input-mass-netto">Net mass (kg)</label>
+                    <input class="form-control" type="number" id="input-mass-netto" name="input-mass-brutto" required>
+                </div>
+                <div class="form-group">
+                    <label for="meursing-code">Meursing</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="meursing-code">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false" id="lookup-meursing">
+                                <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="modal-meursing">
+                    <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="modal-title">Meursing</span>
+                                <span class="modal-close glyphicon glyphicon-remove lookup" aria-hidden="true" id="modal-meursing-close"></span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-type">Milk fat:</label>
+                                            <select class="form-control" id="milk-fat">
+                                                <option value="0"> >= 0 < 1.5 </option>
+                                                <option value="1.5"> >= 1.5 < 3 </option>
+                                                <option value="3"> >= 3 < 6 </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-type">Milk protein:</label>
+                                            <select class="form-control" id="milk-protein">
+                                                <option value="0"> >= 0 < 2.5 </option>
+                                                <option value="2.5"> >= 2.5 < 6 </option>
+                                                <option value="6"> >= 6 < 18 </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-type">Starch/glucose:</label>
+                                            <select class="form-control" id="glucose">
+                                                <option value="0"> >= 0 < 5 </option>
+                                                <option value="5"> >= 5 < 25 </option>
+                                                <option value="25"> >= 25 < 50 </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-type">Sucrose sugar:</label>
+                                            <select class="form-control" id="sugar">
+                                                <option value="0"> >= 0 < 5 </option>
+                                                <option value="5"> >= 5 < 30 </option>
+                                                <option value="30"> >= 30 < 60 </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success"  style="width: 150px;" id="btn-search-meursing-code">Search</button>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div> <!-- ROW -->
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="unit-selection">Measurement units</label>
+                    <div>
+                        <div class="input-group">
+                            <input type="number" id="unit-selection" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" id="unit-selection-button" class="btn btn-default dropdown-toggle unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">001 - stopień plato <span class="caret"></span></button>
+                                <ul class="dropdown-menu units">
+                                    <li><a href="#">001 - Degree plato</a></li>
+                                    <li><a href="#">MIL - thousand pieces</a></li>
+                                </ul>
+                                <button type="button" class="btn btn-default" id="add-unit">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default table-result" id="unit-selection-result-div">
+                        <table class="table table-bordered" id="unit-selection-result-table">
+                            <thead>
+                            <th>Value</th>
+                            <th>Unit</th>
+                            <th style="width: 100px; text-align: center;">Actions</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="additional-code-selection">Additional codes</label>
+                    <div>
+                        <div class="input-group">
+                            <input type="number" id="additional-code-selection" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default" id="lookup-additionalCodes">
+                                    <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default" id="btn-additional-code-add">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="modal-additionalCodes">
+                        <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="modal-title">Additional codes</span>
+                                    <span class="modal-close glyphicon glyphicon-remove lookup" aria-hidden="true" id="modal-additionalCodes-close"></span>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="additionalCodesTree"></div>
+                                </div>
+                                <div class="modal-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default table-result" id="additional-code-selection-result-div">
+                        <table class="table table-bordered" id="additional-code-selection-result-table">
+                            <thead>
+                            <th>Code</th>
+                            <th style="width: 100px; text-align: center;">Actions</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <button type="submit" class="btn btn-success" style="width: 150px;" id="btn-calculate">Calculate duties</button>
+                <button class="btn btn-warning" style="width: 150px;">Reset</button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../public/js/lodash.min.js"></script>
+<script src="../public/js/data.js"></script>
+<script src="../public/js/bootstrap-treeview.min.js"></script>
+<script src="../public/js/calc-ui.js"></script>
+<script src="../public/js/calc-logic.js"></script>
+
+</body>
+</html>
