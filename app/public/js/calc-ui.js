@@ -35,9 +35,11 @@
         $('#lookup-meursing').on('click', function() {
             $('#modal-meursing').css('display', '');
         });
-        $('#modal-meursing-close').on('click', function() {
-            $('#modal-meursing').css('display', 'none');
-        });
+        $('#modal-meursing-close').on('click', closeMeursingModal);
+    };
+
+    var closeMeursingModal = function(){
+        $('#modal-meursing').css('display', 'none');
     };
 
     var setupAdditionalCodesModal = function(){
@@ -163,6 +165,7 @@
     var registerSubmitButtonEvents = function(){
         $("#btn-calculate").click(window.CALC.calculate);
 
+
     };
 
     var registerResetButtonEvents = function() {
@@ -172,6 +175,17 @@
             $('#unit-selection-result-table > tbody').html('');
             $('#additional-code-selection-result-table > tbody').html('');
         })
+    };
+
+    var registerCalcMeursingButtonEvents = function(){
+        $("#btn-search-meursing-code").click(function(event){
+            event.preventDefault();
+            var codes = window.CALC.data.eng.meursingCodes;
+            var index = Math.floor(Math.random() * (codes.length + 1));
+            var code = codes[index];
+            $("#meursing-code").val(code);
+            closeMeursingModal();
+        });
     };
 
     $(document).ready(function() {
@@ -186,6 +200,7 @@
         setupDropdowns();
         registerSubmitButtonEvents();
         registerResetButtonEvents();
+        registerCalcMeursingButtonEvents();
     });
 
 })(window, document, $);
