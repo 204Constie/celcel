@@ -162,6 +162,7 @@
 
     var registerSubmitButtonEvents = function(){
         $("#btn-calculate").click(window.CALC.calculate);
+
     };
 
     $(document).ready(function() {
