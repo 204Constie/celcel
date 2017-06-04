@@ -160,6 +160,10 @@
         });
     };
 
+    var registerSubmitButtonEvents = function(){
+        $("#btn-calculate").click(window.CALC.calculate);
+    };
+
     $(document).ready(function() {
         setupCargoCodeModal();
         setupAdditionalCodesModal();
@@ -170,6 +174,7 @@
         setupAdditionalUnits();
         setupAdditionalCodes();
         setupDropdowns();
+        registerSubmitButtonEvents();
     });
 
 })(window, document, $);
