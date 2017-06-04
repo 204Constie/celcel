@@ -1,3 +1,9 @@
+body {
+  background: url('/public/images/preview.jpg');
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -10,6 +16,7 @@ ul {
 
 .jumbotron {
   margin-top: 80px;
+
 }
 
 .someaddress {

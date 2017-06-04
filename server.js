@@ -21,8 +21,14 @@ app.get('/en', function(req, res){
 app.get('/faq', function(req, res){
 	res.sendFile(path.join(__dirname + '/app/views/faq.html'));
 });
+app.get('/en/faq', function(req, res){
+	res.sendFile(path.join(__dirname + '/app/views/faq.en.html'));
+});
 app.get('/strona', function(req, res){
 	res.sendFile(path.join(__dirname + '/app/views/strona.html'));
+});
+app.get('/en/strona', function(req, res){
+	res.sendFile(path.join(__dirname + '/app/views/strona.en.html'));
 });
 
 app.get('/calc', function(req, res) {
