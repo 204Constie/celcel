@@ -85,6 +85,36 @@
             { text: "Indie" },
             { text: "Argentyna" },
             { text: "Chile" }
+        ],
+        additionalCodes: [
+            {
+                text: "Ograniczenia/restrykcje",
+                nodes: [
+                    {
+                        text: "Przedmioty archeologiczne starsze niż 100 lat",
+                        code: "1010"
+                    },
+                    {
+                        text: "Samochody starsze niż 50 lat",
+                        code: "1020"
+                    }
+                ],
+                code: "10"
+            },
+            {
+                text: "Preferencje taryfowe",
+                code: "20",
+                nodes: [
+                    {
+                        text: "Importowane drogą lądową, wewnętrzną drogą wodną lub drogą powietrzną",
+                        code: "2010"
+                    },
+                    {
+                        text: "Importowane drogą morską i przebywające przez Ocean Atlantycki",
+                        code: "2020"
+                    }
+                ]
+            }
         ]
     };
 
@@ -171,6 +201,36 @@
             { text: "India" },
             { text: "Argentina" },
             { text: "Chile" }
+        ],
+        additionalCodes: [
+            {
+                text: "Restrictions",
+                code: "10",
+                nodes: [
+                    {
+                        text: "Archeological objects more than 100 years old",
+                        code: "1010"
+                    },
+                    {
+                        text: "Cars more than 50 years old",
+                        code: "1020"
+                    }
+                ]
+            },
+            {
+                text: "Tariff preference",
+                code: "20",
+                nodes: [
+                    {
+                        text: "Imported by land, inland waterway or by air",
+                        code: "2010"
+                    },
+                    {
+                        text: "Imported by sea and arriving via the Atlantic Ocean",
+                        code: "2020"
+                    }
+                ]
+            }
         ]
     }
 

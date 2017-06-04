@@ -261,12 +261,27 @@
                             <div class="input-group">
                                 <input type="number" id="additional-code-selection" class="form-control">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default" id="btn-additional-code-selection">
+                                    <button type="button" class="btn btn-default" id="lookup-additionalCodes">
                                         <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
                                     </button>
                                     <button type="button" class="btn btn-default" id="btn-additional-code-add">
                                         Dodaj
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="modal-additionalCodes">
+                            <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="modal-title">Kody dodatkowe</span>
+                                        <span class="modal-close glyphicon glyphicon-remove lookup" aria-hidden="true" id="modal-additionalCodes-close"></span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="additionalCodesTree"></div>
+                                    </div>
+                                    <div class="modal-footer"></div>
                                 </div>
                             </div>
                         </div>

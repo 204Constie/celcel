@@ -40,7 +40,15 @@
         });
     };
 
-
+    var setupAdditionalCodesModal = function(){
+        $('#modal-additionalCodes').css('display', 'none');
+        $('#lookup-additionalCodes').on('click', function() {
+            $('#modal-additionalCodes').css('display', '');
+        });
+        $('#modal-additionalCodes-close').on('click', function() {
+            $('#modal-additionalCodes').css('display', 'none');
+        });
+    };
 
     var setupAdditionalUnits = function() {
         $('#add-unit').click(function(event) {
@@ -84,10 +92,10 @@
         })
     };
 
-    var buildCargoText = function(entry){
+    var buildTreeNodeText = function(entry){
         entry.text = entry.code + " - " + entry.text;
         if(entry.nodes){
-            entry.nodes = _.forEach(entry.nodes, buildCargoText);
+            entry.nodes = _.forEach(entry.nodes, buildTreeNodeText);
         }
     };
 
@@ -100,7 +108,7 @@
             data = window.CALC.data.eng.commodityCodesByCategory;
         }
 
-        var entries = _.forEach(data, buildCargoText);
+        var entries = _.forEach(data, buildTreeNodeText);
         var tree = $("#commodityCodesTree");
 
         tree.treeview({
@@ -113,6 +121,27 @@
 
     };
 
+    var populateAdditionalCodesTree = function(){
+        var data;
+        if(window.CALC.language === "pl"){
+            data = window.CALC.data.pl.additionalCodes;
+        }
+        else{
+            data = window.CALC.data.eng.additionalCodes;
+        }
+
+        var entries = _.forEach(data, buildTreeNodeText);
+        var tree = $("#additionalCodesTree");
+
+        tree.treeview({
+            data: entries,
+        });
+        tree.treeview('collapseAll', { silent: true });
+        tree.on('nodeSelected', function(event, data){
+            $("#additional-code-selection").val(data.code);
+        });
+    };
+
     var setupDropdowns = function(){
         $('#input-currency > ul > li > a').click(function(e){
             $('#input-currency > button').text(this.innerHTML);
@@ -121,8 +150,10 @@
 
     $(document).ready(function() {
         setupCargoCodeModal();
+        setupAdditionalCodesModal();
         setupDropdownsSelection();
         populateCommodityCodesTree();
+        populateAdditionalCodesTree();
         setupMeursingSelection();
         setupAdditionalUnits();
         setupAdditionalCodes();
