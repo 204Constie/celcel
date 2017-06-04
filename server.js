@@ -12,22 +12,14 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/app'));
 
-app.get('', function(req, res){
-	var lang = req.query.lang;
-    if (lang === 'en')
-        res.sendFile(path.join(__dirname + '/index.en.html'));
-    else
-        res.sendFile(path.join(__dirname + '/index.html'));
-	// res.sendFile(path.join(__dirname + '/index.html'));
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/index', function(req, res) {
-	var lang = req.query.lang;
-	if (lang === 'en')
-		res.sendFile(path.join(__dirname + '/app/index.en.html'));
-	else
-		res.sendFile(path.join(__dirname + '/app/index.html'));
+app.get('/en', function(req, res){
+  res.sendFile(path.join(__dirname + '/app/index.en.html'));
 });
+
 
 app.get('/faq', function(req, res){
     var lang = req.query.lang;
