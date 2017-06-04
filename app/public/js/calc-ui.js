@@ -165,6 +165,15 @@
 
     };
 
+    var registerResetButtonEvents = function() {
+        $('#btn-reset').click(function(event) {
+            event.preventDefault();
+            $('#calc-form')[0].reset();
+            $('#unit-selection-result-table > tbody').html('');
+            $('#additional-code-selection-result-table > tbody').html('');
+        })
+    };
+
     $(document).ready(function() {
         setupCargoCodeModal();
         setupAdditionalCodesModal();
@@ -176,6 +185,7 @@
         setupAdditionalCodes();
         setupDropdowns();
         registerSubmitButtonEvents();
+        registerResetButtonEvents();
     });
 
 })(window, document, $);

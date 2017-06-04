@@ -65,7 +65,7 @@
         <!--<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>-->
         <!--<p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>-->
 
-        <form>
+        <form id="calc-form">
             <div class="row">
                 <div class="col-md-6">
 
@@ -73,7 +73,7 @@
                         <label for="input-type">Typ</label>
                         <select class="form-control" id="input-type" required>
                             <option value="import">Przywóz</option>
-                            <option value="export">Wywóż</option>
+                            <option value="export">Wywóz</option>
                         </select>
                     </div>
                     <div class="form-group required">
@@ -201,7 +201,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success"  style="width: 150px;" id="btn-search-meursing-code">Wyszukaj</button>
+                                        <div class="col-md-12" style="text-align: center">
+                                            <button class="btn btn-success"  style="width: 150px;" id="btn-search-meursing-code">Wyszukaj</button>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -306,11 +308,9 @@
             <div class="row">
                 <div class="col-md-12" style="text-align: center;">
                     <button type="submit" class="btn btn-success" style="width: 150px;" id="btn-calculate">Oblicz cło</button>
-                    <button class="btn btn-warning" style="width: 150px;">Resetuj</button>
+                    <button class="btn btn-warning" style="width: 150px;" id="btn-reset">Resetuj</button>
                 </div>
             </div>
-
-
         </form>
 
     </div>
