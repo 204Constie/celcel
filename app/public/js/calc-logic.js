@@ -29,6 +29,14 @@
 
     ns.calculate = function(){
         var data = getInputData();
+
+        //(additionalUnits.value * value) + 1.2 * mass
+        var additionalUnitsValue = data.additionalUnits.value || 0;
+        var value = data.value || 0;
+        var mass = data.massNetto || 0;
+
+        var dutyValue = (parseFloat(additionalUnitsValue) * parseFloat(value)) + 1.2 * mass;
+        return dutyValue + data.currency;
     }
 
 })(window.CALC = window.CALC || {} , document, $);
