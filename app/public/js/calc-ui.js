@@ -57,6 +57,13 @@
             var value = $('#unit-selection').val();
             var unit = $('#unit-selection-button').text();
 
+            var unitsList = window.CALC.data.controls.additionalUnits;
+            var selectedUnit = {
+                "unit": unit,
+                "value": value
+            };
+
+
             var element = '<tr>' +
                 '<td>' + value + '</td>' +
                 '<td>' + unit + '</td>' +
@@ -64,9 +71,14 @@
                 '</tr>';
 
             var addedElement = $('#unit-selection-result-table > tbody').append(element).children().last();
+            unitsList.push(selectedUnit);
+
             $(addedElement).find("button").click(function(event) {
                 event.preventDefault();
                 console.log("Delete clicked!");
+                unitsList = _.remove(unitsList, function(o){
+                    return o.unit === selectedUnit.unit && o.value === selectedUnit.value;
+                });
                 $(addedElement).remove();
             });
 

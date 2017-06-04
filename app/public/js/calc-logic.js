@@ -10,6 +10,8 @@
         var massBrutto = $("#input-mass-brutto").val();
         var massNetto = $("#input-mass-netto").val();
         var meursingCode = $("#meursing-code").val();
+        var additionalUnits = ns.data.controls.additionalUnits;
+        var additionalCodes = $("#additional-code-selection").val();
 
     };
 

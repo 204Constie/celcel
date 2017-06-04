@@ -232,7 +232,11 @@
                 ]
             }
         ]
-    }
+    };
+
+    ns.data.controls = {
+        additionalUnits: []
+    };
 
 
 })(window.CALC = window.CALC || {}, document, $);
