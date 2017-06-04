@@ -71,3 +71,8 @@ code {
     margin-bottom: 5px;
 
 }
+
+.form-group.required > label:after {
+    content:"*";
+    color:red;
+}

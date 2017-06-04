@@ -69,25 +69,25 @@
             <div class="row">
                 <div class="col-md-6">
 
-                    <div class="form-group">
-                        <label for="input-type">Typ:</label>
-                        <select class="form-control" id="input-type">
+                    <div class="form-group required">
+                        <label for="input-type">Typ</label>
+                        <select class="form-control" id="input-type" required>
                             <option value="import">Przywóz</option>
                             <option value="export">Wywóż</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="input-country">Kraj:</label>
-                        <select class="form-control" id="input-country">
+                    <div class="form-group required">
+                        <label for="input-country">Kraj</label>
+                        <select class="form-control" id="input-country" required>
                             <option value="pl">Polska</option>
                             <option value="en">Anglia</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="cargo-code">Kod towaru:</label>
+                    <div class="form-group required">
+                        <label for="cargo-code">Kod towaru</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="cargo-code">
+                            <input type="number" class="form-control" id="cargo-code" required>
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false" id="lookup-cargo-code">
                                     <span class="glyphicon glyphicon-search lookup" aria-hidden="true"></span>
@@ -112,10 +112,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="input-value">Wartość:</label>
+                    <div class="form-group required">
+                        <label for="input-value">Wartość</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="input-value">
+                            <input type="number" class="form-control" id="input-value" required>
                             <div class="input-group-btn" id="input-currency">
                                 <button type="button" class="btn btn-default dropdown-toggle currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PLN - złotówka (Polska) <span class="caret"></span></button>
                                 <ul class="dropdown-menu currency dropdown-menu-right">
@@ -136,15 +136,15 @@
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <label for="input-mass-brutto">Masa brutto (kg):</label>
+                        <label for="input-mass-brutto">Masa brutto (kg)</label>
                         <input class="form-control" type="number" id="input-mass-brutto" name="input-mass-brutto">
                     </div>
-                    <div class="form-group">
-                        <label for="input-mass-netto">Masa brutto (kg):</label>
-                        <input class="form-control" type="number" id="input-mass-netto" name="input-mass-brutto">
+                    <div class="form-group required">
+                        <label for="input-mass-netto">Masa netto (kg)</label>
+                        <input class="form-control" type="number" id="input-mass-netto" name="input-mass-brutto" required>
                     </div>
                     <div class="form-group">
-                        <label for="meursing-code">Meursing:</label>
+                        <label for="meursing-code">Meursing</label>
                         <div class="input-group">
                             <input type="number" class="form-control" id="meursing-code">
                             <div class="input-group-btn">
@@ -201,7 +201,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success"  style="width: 150px;" id="btn-search-meursing-code">Search</button>
+                                        <button class="btn btn-success"  style="width: 150px;" id="btn-search-meursing-code">Wyszukaj</button>
                                     </div>
 
                                 </div>
@@ -221,7 +221,7 @@
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <label for="unit-selection">Jednostki miary:</label>
+                        <label for="unit-selection">Jednostki miary</label>
                         <div>
                             <div class="input-group">
                                 <input type="number" id="unit-selection" class="form-control">
@@ -256,7 +256,7 @@
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <label for="additional-code-selection">Kody dodatkowe:</label>
+                        <label for="additional-code-selection">Kody dodatkowe</label>
                         <div>
                             <div class="input-group">
                                 <input type="number" id="additional-code-selection" class="form-control">
