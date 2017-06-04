@@ -56,8 +56,50 @@
  <!-- Main component for a primary marketing message or call to action -->
  <div class="jumbotron">
    <h1>Pomoc</h1>
-   <p>a sluzy do</p>
-   <p>b sluzy do</p>
+
+   <p>Kalkulator pozwala użytkownikowi na obliczanie należności celnych wykonywanych w oparciu o pełne lub częściowe zestawy danych.</p>
+
+
+   <h2>Pola kalkulatora</h2>
+   <p>Użytkownik wprowadza dane w następujących polach ( pola obligatoryjne oznaczono “*”):</p>
+
+   <h3>Typ *</h3>
+   <p>Określa czy kalkulacja dotyczy Przywozu/Wywozu</p>
+   <h3>Kraj *</h3>
+   <p>Kraj pochodzenia/przeznaczenia ( w zależności od wartości w polu Typ).</p>
+   <h3>Kod towaru:*</h3>
+   <p>Kod nomenklatury (10 cyfr). Jeżeli użytkownik wprowadzi mniejszą ilość cyfr, system wyświetla drzewo nomenklatury do dalszego przeglądania. W przypadku wprowadzenia błędnego kodu, zostanie wyświetlony komunikat błędu <i>Nieprawidłowy kod</i>.</p>
+   <h3>Masa brutto (kg) </h3>
+   <p>Masa brutto – 16 cyfr włączając “.”.</p>
+   <h3>Masa netto (kg) *</h3>
+   <p>Masa netto – 16 cyfr włączając “.”.</p>
+   <h3>Wartość:*</h3>
+   <p>Wartość celna towarów w wybranej walucie. Pole akceptuje 18 cyfr włączając “.”.</p>
+   <h3>Meursing</h3>
+   <p>W sytuacji, kiedy wymagane jest wprowadzenie kodu dodatkowego Meursinga, System wyświetla odpowiedni komunikat. W przypadku, kiedy użytkownik zna kod, może go wprowadzić bezpośrednio. W przypadku, gdy kod nie jest znany, użytkownik może kliknąć na ikonkę <i>lupy</i> umiejscowioną po prawej stronie pola kodu Meursinga. Spowoduje to otwarcie okna kalkulatora kodu Meursinga. Użytkownik wybiera wartości w następujących polach:</p>
+
+   <ul class="bulletlist">
+     <li><p>Tłuszcz w mleku</p></li>
+     <li><p>Białko w mleku</p></li>
+     <li><p>Skrobia/glukoza</p></li>
+     <li><p>Sacharoza/ cukier inwertowany/izoglukoza</p></li>
+   </ul>
+
+   <p>System wyświetla odpowiadający wprowadzonym wartościom podlinkowany kod Meursinga. Użytkownik klika link i kod zostaje automatycznie wprowadzony w odpowiednie pole kalkulatora.</p>
+   <h3>Jednostka dodatkowa </h3>
+   <p>Jednostka dodatkowa, jeżeli jest to sygnalizowane przez System, musi zostać wybrana z listy dostępnych jednostek dodatkowych z kwalifikatorami.</p>
+   <p>Użytkownik wprowadza wartość i wybiera przycisk <b>Dodaj</b>. Wybrana jednostka dodatkowa zostanie dodana do listy.</p>
+
+   <p>W celu usunięcia jednostki dodatkowej z listy, użytkownik wybiera daną jednostkę oraz przycisk <b>Usuń</b>.</p>
+
+   <p><b>UWAGA:</b> W przypadku jednostki dodatkowej DTNR i/lub DAP w polu <i>Ilość/Polaryzacja (dla DTNR i DAP)</i> wpisujemy POLARYZACJĘ.</p>
+
+   <h3>Kody dodatkowe </h3>
+   <p>Koniecznosć wprowadzenia czterocyfrowych kodów dodatkowych jest sygnalizowana przez System. Kody w wyświetlanych przez System komunikatach są podlinkowane. Użytkownik może wprowadzić kod dodatkowy klikając odpowiedni link.</p>
+   <h3>Wyniki kalkulacji</h3>
+   <p>Po wypełnieniu wymaganych pól w formularzu kalkulatora, użytkownik wybiera przycisk <b>Oblicz cło</b>.</p>
+
+
 
  </div>
 
