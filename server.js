@@ -45,5 +45,13 @@ app.get('/calc', function(req, res) {
         res.sendFile(path.join(__dirname + '/app/views/calc.html'));
 });
 
+app.get('/results', function (req, res) {
+    var lang = req.query.lang;
+    if (lang === 'en')
+        res.sendFile(path.join(__dirname + '/app/views/results.en.html'));
+    else
+        res.sendFile(path.join(__dirname + '/app/views/results.html'));
+});
+
 app.listen(8080);
 console.log('blog server listening on port 8080');

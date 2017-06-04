@@ -1,0 +1,250 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kalkulator</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../public/css/calc.css"/>
+    <link rel="stylesheet" href="../public/css/bootstrap-treeview.min.css"/>
+
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TariffCalc</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li class="active"><a href="/calc">Kalkulator</a></li> -->
+                <li><a href="/calc">Kalkulator</a></li>
+                <li><a href="/strona">Pomoc</a></li>
+                <!-- <li><a href="#contact">Kontakt</a></li> -->
+                <li><a href="/faq">FAQ</a></li>
+                <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li class="dropdown-header">Nav header</li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li><a href="#">One more separated link</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/calc">PL</a></li>
+                <li><a href="/calc?lang=en">EN</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="container">
+    <div class="page-header">
+        <h1>Wyniki kalkulacji</h1>
+    </div>
+
+    <div class="col-md-12">
+        <div id="general-terms">
+            <h2>Warunki ogólne</h2>
+            <p>Dopuszczenie do wolnego obrotu pod warunkami:</p>
+            <ul>
+                <li>Przedstawienie świadectwa (certyfikatu) / pozwolenia (licencji) / dokumentu: C644 lub Y929</li>
+                <li>Pozostałe warunki: C400 lub Y900</li> <!-- TODO: tutja jakieś dane -->
+            </ul>
+        </div>
+        <div id="means">
+            <h3>Środki</h3>
+            <table class="table table-bordered" id="means-result-table">
+                <thead>
+                <th>Środek</th>
+                <th>Obszar geograficzny</th>
+                <th>Obowiązywanie</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>750</td>
+                    <td>ERGA OMNES</td>
+                    <td>2017-01-01</td>
+                </tr>
+                <tr>
+                    <td>420</td>
+                    <td>6969</td>
+                    <td>2017-02-02</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+        <br/>
+
+        <div id="scenarios">
+            <h2>Scenariusze kalkulacyjne</h2>
+            <br/>
+            <div id="scenarios-results">
+                <div>
+                    <h3>Scenariusz kalkulacyjny 1</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Środek</th>
+                        <th>Obszar geograficzny</th>
+                        <th>Obowiązywanie</th>
+                        <th>Podstawa wyliczeń</th>
+                        <th>Należność</th>
+                        <th>Formuła <i>elementy dodatkowe</i></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>142</td>
+                            <td>2005</td>
+                            <td>2017-01-01</td>
+                            <td>1.-</td>
+                            <td>0.0</td>
+                            <td>0 %</td>
+                        </tr>
+                        <tr>
+                            <td>305</td>
+                            <td>1011</td>
+                            <td>2017-01-01</td>
+                            <td>1.-</td>
+                            <td>0.0</td>
+                            <td>8 %</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5"><b>Suma</b></td>
+                            <td>0</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <h4>Pole 47</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Kod</th>
+                        <th>Podstawa</th>
+                        <th>Stawka</th>
+                        <th>Kwota</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>A00</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B00</td>
+                            <td>1</td>
+                            <td>8.00</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr>
+                <br/>
+
+                <div>
+                    <h3>Scenariusz kalkulacyjny 2</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Środek</th>
+                        <th>Obszar geograficzny</th>
+                        <th>Obowiązywanie</th>
+                        <th>Podstawa wyliczeń</th>
+                        <th>Należność</th>
+                        <th>Formuła <i>elementy dodatkowe</i></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>103</td>
+                            <td>1011</td>
+                            <td>2017-01-01</td>
+                            <td>1.-</td>
+                            <td>0.0</td>
+                            <td>0 %</td>
+                        </tr>
+                        <tr>
+                            <td>305</td>
+                            <td>1011</td>
+                            <td>2017-01-01</td>
+                            <td>1.-</td>
+                            <td>0.0</td>
+                            <td>8 %</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5"><b>Suma</b></td>
+                            <td>0</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <h4>Pole 47</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Kod</th>
+                        <th>Podstawa</th>
+                        <th>Stawka</th>
+                        <th>Kwota</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>A10</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B00</td>
+                            <td>1</td>
+                            <td>8.00</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr>
+                <br/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../public/js/lodash.min.js"></script>
+<script src="../public/js/data.js"></script>
+<script src="../public/js/bootstrap-treeview.min.js"></script>
+<script src="../public/js/calc-ui.js"></script>
+<script src="../public/js/calc-logic.js"></script>
+
+</body>
+</html>
